@@ -1,0 +1,579 @@
+@font-face {
+    font-family: "malky-vanilla";
+    src: url(assets/fonts/MalkyVanillaPersonalUseOnly-Regular.ttf);
+}
+@font-face {
+    font-family: "yeseva";
+    src: url(assets/fonts/YesevaOne-Regular.ttf);
+}
+@font-face {
+    font-family: "BonaNova";
+    src: url(assets/fonts/BonaNovaSC-Regular.ttf);
+}
+
+html{
+    scroll-behavior: smooth;
+    min-height: 200vh;
+}
+
+body{
+    background: #ece2d4;
+    color: #3e2f24;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@media (max-width:768px) {
+    html{
+        overflow-x: auto;
+    }
+}
+
+h1{
+    font-size: 60px;
+}
+
+.portfolio-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top:0;
+    z-index: 9999;
+    padding: 18px 0;
+    height: 150px;
+}
+.portfolio-navbar.scrolled{
+    padding: 0px 0;
+    background-color:#3e2f24;
+    position: fixed;
+    transition: 0.32s ease-in-out;
+}
+
+.navbar-text{
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 22px;
+    
+}
+.navbar-text a{
+    color: #3e2f24;
+}
+
+.navbar-link {
+    position: relative; 
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.navbar-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 5px; 
+    background-color: #3e2f24;
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    transition: width 0.5s;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 100%;
+}
+
+.navbar-link.active, .navbar-text a.active  {
+    font-weight:bold;
+    color: #3e2f24;
+}
+
+.portfolio-navbar.scrolled .navbar-text a,
+.portfolio-navbar.scrolled .navbar-head{
+    color: #ece2d4;
+}
+.portfolio-navbar.scrolled .navbar-link::after{
+    background-color: #ece2d4;
+}
+
+.navbar-head{
+    padding: 10px 5px;
+    font-size: 60px;
+    font-family: "malky-vanilla",sans-serif;
+    margin-right: 65%;
+    color: #3e2f24;
+}
+
+.navbar-head:focus, .navbar-head:hover{
+    color: #3e2f24;
+}
+
+.navbar-toggler{
+    margin-left: auto;
+}
+
+
+@media (max-width:768px) {
+    .navbar-head{
+        margin-right: auto;
+    }
+    .portfolio-navbar {
+        position: relative;
+        padding: 10px 30px;
+        margin-top: -40px;
+        margin-left: 8px;
+        width: 101%;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        background-color: #ece2d4;
+    }
+
+    .navbar-collapse.show {
+        position: relative;
+        width: 100%;
+    }
+    .navbar>.container{
+        margin-left: -10px;
+    }
+    .navbar-link{
+        margin: 5px;
+    }
+    .navbar-link::after{
+        display: none;
+    }
+}
+
+.container{
+    margin: 90px 50px;
+}
+
+.about{
+    margin-bottom: 200px;
+}
+
+.about{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.about h1{
+    font-family: "yeseva",sans-serif;
+}
+.media{
+    display: none;
+}
+.about img{
+    border: 2px solid #3e2f24;
+    border-radius: 1px;
+}
+
+section{
+    display: flex;
+}
+.about h1{
+    font-size: 70px;
+}
+.about p{
+    font-size: 18px;
+}
+
+.about-navButtons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.about-navButtons button{
+    margin: 5px;
+    border-radius: 40px;
+    height: 50px;
+    width: 120px;
+    background: #3e2f24;
+    color: #ece2d4;
+    font-size: 1.2rem;
+    border: none;
+    border: 2px solid #3e2f24;
+}
+
+
+@media(max-width:768px){
+    .about{
+        overflow-x: auto;
+        margin-top: 100px;
+    }
+    .container{
+        margin:60px 0px;
+    }
+    .about h1{
+        font-size: 30px;
+    }
+    .about p{
+        font-size: 15px;
+    }
+    .about-me .media{
+        display: block;
+    }
+    .about-me {
+        text-align: center;
+    }
+    .about-me .hidden{
+        display: none;
+    }
+    .about-me .web{
+        display: none;
+    }
+    .about-navButtons{
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: 65px;
+    }
+}
+
+.exp{
+    background: #3e2f24;
+    color: #ece2d4;
+}
+.exp h1{
+    font-family: "yeseva",sans-serif;
+    font-size: 70px;
+}
+
+.exp h4{
+    margin: 25px;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.exp p{
+    margin: 40px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+@media(max-width:768px){
+    .exp{
+        overflow-x: auto;
+        text-align: center;
+    }
+    .exp h1{
+        margin-top: 20px;
+        font-size: 50px;
+    }
+    .exp h4{
+        font-size: 25px;
+    }
+    .exp p{
+        font-size: 15px;
+    }
+}
+
+
+#logo{
+    width: 50px;
+    padding: 5px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.scrolled{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.laptop {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    perspective: 2000px;
+    margin-left: auto;
+    margin-right: 310px;
+    font-size: 12px;
+}
+
+.lid {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    background-color: #333;
+    margin-left: 120px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    transition: transform 1.5s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.screen{
+    margin: 10px 10px;
+    height: 90%;
+    background-image: url(https://media.idownloadblog.com/wp-content/uploads/2021/06/macOS-Monterey-wallpaper-Light.jpg);
+    background-size: cover;
+}
+
+.keyboard {
+    position: absolute;
+    top: 420px;
+    width: 120%;
+    height: 70px;
+    margin-left: 15px;
+    background-color: #555;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transform: rotateX(-45deg);
+    transform-origin: top;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.phone{
+    display:none;
+    width: 60%;
+    height: 60%;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.phone-screen{
+    margin: 10px 10px;
+    height: 95%;
+    position: absolute;
+    background-image: url(https://cdn.wallpapersafari.com/23/71/v4aFmn.jpg);
+    background-size:cover;
+    color: white;
+    font-size: 10px;
+    background-repeat: no-repeat;
+}
+
+@media(max-width:768px) {
+    .phone{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    .laptop{
+        display:none;
+    }
+}
+
+.skill {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.skills h1{
+    font-family: "yeseva",sans-serif;
+    font-size: 70px;
+    margin-bottom: 70px;
+    text-align: center
+}
+
+.skill img {
+    display: block;
+    margin: 0 auto;
+}
+
+.skill p {
+    margin: 1px 0 0;
+}
+
+@media (max-width:768px) {
+    .skills{
+        text-align: center;
+        height: 80vh;
+    }
+    .skills h1{
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+}
+.contact{
+    background: #3e2f24;
+    color: #ece2d4;
+}
+.contact-form {
+    background-color: #ece2d4;
+    text-align: center;
+    width: fit-content; 
+    padding: 15px 20px; 
+    margin-left: auto;
+    margin-right: 165px;
+    border-radius: 10px; 
+}
+.contact-form input, .contact-form textarea{
+    margin: 10px 0;
+    width: 420px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 1.3rem;
+}
+.contact-form textarea{
+    width: 870px;
+    height: 400px;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+    border: 3px solid #3e2f24 !important;
+}
+
+.contact-form button{
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 10px;
+}
+.contact-form button:hover{
+    background-color:#3e2f24;
+    color: #ece2d4;
+}
+
+.contact h1{
+    font-size: 70px;
+    font-family: "yeseva",sans-serif;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.status-row{
+    color: #3e2f24;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .contact{
+        overflow-x: auto;
+    }
+    .contact-form {
+        width: 95%; 
+        margin-right: auto; 
+        padding: 5px; 
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%; 
+        height: 50px; 
+    }
+
+    .contact-form textarea {
+        height: 200px; 
+    }
+
+    .contact-form button {
+        width: 80px; 
+        font-size: 1rem;
+    }
+
+    .contact h1 {
+        font-size: 50px; 
+        margin-bottom: 30px;
+    }
+    .contact-form .row {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .contact-form input, .contact-form textarea, .contact-form button {
+        display: block;
+        width: 90%; 
+        margin: 10px auto; 
+    }
+}
+footer {
+    height: 30vh;
+}
+
+footer section {
+    background-color: #3e2f24;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+footer h2 {
+    font-size: 50px;
+    font-family: "malky-vanilla", sans-serif;
+    color: #ece2d4;
+    margin: 0;
+}
+
+.foot-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center; 
+}
+
+.foot-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.foot-images {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.foot-logo {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(18%) saturate(303%) hue-rotate(332deg) brightness(109%) contrast(85%);
+    height: 70px;
+    margin: 0 8px;
+}
+.foot-logo:hover{
+    cursor: pointer;
+}
+
+.foot-contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.foot-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.foot-contact-icon {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(18%) saturate(303%) hue-rotate(332deg) brightness(109%) contrast(85%);
+    height: 30px;
+    margin-right: 8px;
+}
+
+.foot-contact-text {
+    color: #ece2d4;
+}
+
+@media (max-width:768px) {
+    footer{
+        text-align: center;
+    }
+    footer h2{
+        display: none;
+    }
+    .foot-right{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
