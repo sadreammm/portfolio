@@ -27,3 +27,4 @@ dist-ssr
 .env
 
 Contact.jsx
+src/components/Contact.jsx
