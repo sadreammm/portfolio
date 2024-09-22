@@ -40,7 +40,7 @@ export default function About(){
                                 professional setting.
                             </p>
                             <div className='about-navButtons'>
-                            <button style ={{display:"none"}}>Resume</button><a href="#contact"><button>Connect</button></a>
+                            <a href={resume} target="_blank" rel="noopener noreferrer"><button>Resume</button></a><a href="#contact"><button>Connect</button></a>
                             </div>  
                         </td>
                     </tr>
