@@ -57,8 +57,6 @@ export default function Contact(props) {
                 import.meta.env.VITE_EMAILJS_USER_ID 
             );
 
-            console.log('hi');
-
             if (result.status === 200) {
                 setStatus({ success: true, message: "Message Sent Successfully!" });
                 setTimeout(() => {
