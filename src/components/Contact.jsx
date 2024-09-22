@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from 'emailjs-com';
-import { emailConfig } from "./config.js";
+
 
 export default function Contact(props) {
     const formData = {
@@ -33,9 +33,6 @@ export default function Contact(props) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const { serviceId, templateId, userId } = emailConfig;
-
-        console.log(serviceId, templateId, userId);
 
         if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.message) {
             setStatus({ success: false, message: "Please fill out all the fields." });
