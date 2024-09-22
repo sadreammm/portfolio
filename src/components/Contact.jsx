@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from 'emailjs-com';
-import { emailConfig } from "./config";
+import { emailConfig } from "./config.js";
 
 export default function Contact(props) {
     const formData = {
