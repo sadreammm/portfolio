@@ -36,6 +36,7 @@ export default function Contact(props) {
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const userId = import.meta.env.VITE_EMAILJS_USER_ID;
 
+        console.log(serviceId, templateId, userId);
 
         if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.message) {
             setStatus({ success: false, message: "Please fill out all the fields." });
