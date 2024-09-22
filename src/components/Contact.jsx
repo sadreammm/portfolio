@@ -56,10 +56,10 @@ export default function Contact(props) {
             };
 
             const result = await emailjs.send(
-                serviceId, 
-                templateId, 
+                'service_12tdski', 
+                'template_r1zboys', 
                 templateParams,
-                userId 
+                '8Y0RY9J0RpO2FQMEu' 
             );
 
             if (result.status === 200) {
