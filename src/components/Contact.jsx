@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from 'emailjs-com';
+import { emailConfig } from "./config";
 
 export default function Contact(props) {
     const formData = {
@@ -32,9 +33,7 @@ export default function Contact(props) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-        const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+        const { serviceId, templateId, userId } = emailConfig;
 
         console.log(serviceId, templateId, userId);
 
