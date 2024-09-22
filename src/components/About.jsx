@@ -1,6 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Me from '../assets/images/me.jpg'
+import resume from '../assets/resume.pdf'
 
+/*Make the resume button*/ 
 export default function About(){
     return(
         <Container>
@@ -18,7 +20,7 @@ export default function About(){
                                 professional setting.
                             </p>
                             <div className='about-navButtons'>
-                                <button style ={{display:"none"}}>Resume</button><a href="#contact"><button>Connect</button></a>
+                                <a href={resume} target="_blank" rel="noopener noreferrer"><button>Resume</button></a><a href="#contact"><button>Connect</button></a>
                             </div>  
                         </td>
                         <td className="hidden" width="6%"></td>
