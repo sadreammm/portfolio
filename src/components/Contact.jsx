@@ -32,6 +32,10 @@ export default function Contact(props) {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+
 
         if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.message) {
             setStatus({ success: false, message: "Please fill out all the fields." });
@@ -51,13 +55,11 @@ export default function Contact(props) {
             };
 
             const result = await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID, 
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+                serviceId, 
+                templateId, 
                 templateParams,
-                import.meta.env.VITE_EMAILJS_USER_ID 
+                userId 
             );
-
-            console.log('hi');
 
             if (result.status === 200) {
                 setStatus({ success: true, message: "Message Sent Successfully!" });
