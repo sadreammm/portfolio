@@ -35,11 +35,21 @@ const Contact = () => {
             if (response.ok) {
                 setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
+                // Reset button after 10 seconds
+                setTimeout(() => {
+                    setStatus('idle');
+                }, 10000);
             } else {
                 setStatus('error');
+                setTimeout(() => {
+                    setStatus('idle');
+                }, 5000);
             }
         } catch (error) {
             setStatus('error');
+            setTimeout(() => {
+                setStatus('idle');
+            }, 5000);
         }
     };
 
